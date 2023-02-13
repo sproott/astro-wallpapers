@@ -4,18 +4,22 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="flex justify-between items-center w-58vw h-full mx-auto">
-    <Item item="eat" colorClass="color-nord-yellow">
-      <div class="i-fa6-solid:utensils"></div>
-    </Item>
-    <Item item="sleep" colorClass="color-nord-green">
-      <div class="i-fa6-solid:bed"></div>
-    </Item>
-    <Item item="code" colorClass="color-nord-frost-300">
-      <div class="i-fa6-solid:code"></div>
-    </Item>
-    <Item item="repeat" colorClass="color-nord-red">
-      <div class="i-fa6-solid:arrow-rotate-right"></div>
-    </Item>
+  <div class="flex justify-center items-center h-full w-full">
+    <div
+      class="flex justify-between items-center lt-md:flex-col lt-md:min-h-600px h-70vh md:h-full md:min-w-700px md:w-58vw"
+    >
+      <Item item="eat" colorClass="color-nord-yellow">
+        <div class="i-fa6-solid:utensils"></div>
+      </Item>
+      <Item item="sleep" colorClass="color-nord-green">
+        <div class="i-fa6-solid:bed"></div>
+      </Item>
+      <Item item="code" colorClass="color-nord-frost-400">
+        <div class="i-fa6-solid:code"></div>
+      </Item>
+      <Item item="repeat" colorClass="color-nord-red">
+        <div class="i-fa6-solid:arrow-rotate-right"></div>
+      </Item>
+    </div>
   </div>
 </Layout>
