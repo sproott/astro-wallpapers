@@ -1,0 +1,17 @@
+---
+interface Props {
+  colorClass: string;
+  item: string;
+}
+
+const { colorClass, item } = Astro.props;
+---
+
+<div class="flex flex-col items-center gap-10">
+  <div class="text-9xl color-nord-polarNight-200">
+    <slot />
+  </div>
+  <div class="text-4xl font-mono color-nord-snowStorm-100">
+    {item}<span class={colorClass}>()</span>;
+  </div>
+</div>
