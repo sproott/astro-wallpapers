@@ -1,0 +1,9 @@
+---
+import FullScreenButtons from "../components/FullScreenButtons.svelte";
+import Layout from "./Layout.astro";
+---
+
+<Layout>
+  <slot />
+  <FullScreenButtons client:load />
+</Layout>

@@ -13,7 +13,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.0.6"
+    "@astrojs/svelte": "^2.0.1",
+    "astro": "^2.0.6",
+    "svelte": "^3.54.0"
   },
   "devDependencies": {
     "@iconify-json/fa-solid": "^1.1.4",
