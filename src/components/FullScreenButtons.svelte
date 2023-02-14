@@ -10,7 +10,7 @@
 
 <div
   class:hidden
-  class="absolute inset-0 flex flex-col justify-end items-center gap-4 py-4"
+  class="absolute inset-0 pointer-events-none children:pointer-events-initial flex flex-col justify-end items-center gap-4 py-4"
 >
   <button
     class:hidden
