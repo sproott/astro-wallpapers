@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import type { GetStaticPaths } from "astro";
 import { themes } from "../../lib/constants";
 
@@ -22,10 +24,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const { Wallpaper } = Astro.props;
-
-Astro.cookies.set("theme", Astro.params.theme ?? "nord", {
-  path: "/",
-});
 ---
 
 <Wallpaper />
