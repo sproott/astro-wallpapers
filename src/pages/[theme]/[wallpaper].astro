@@ -1,9 +1,6 @@
 ---
-export const prerender = true;
-
 import type { GetStaticPaths } from "astro";
 import { themes } from "../../lib/constants";
-import { currentPage } from "../../lib/stores";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const wallpapers = await Astro.glob("../../components/wallpapers/*.astro");
