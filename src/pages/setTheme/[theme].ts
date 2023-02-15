@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { themes } from "../lib/constants";
+import { themes } from "../../lib/constants";
 
 export const post: APIRoute = async ({ cookies, params }) => {
   const { theme } = params;

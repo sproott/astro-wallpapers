@@ -15,7 +15,7 @@ const { theme } = Astro.params;
   <body class=`font-mono color-fg-light ${theme}` data-theme={theme}>
     <script>
       const { theme } = document.body.dataset;
-      await fetch(`/${theme ?? "nord"}`, { method: "POST" });
+      await fetch(`/setTheme/${theme ?? "nord"}`, { method: "POST" });
     </script>
     <div class="relative bg-bg-darkGray h-100vh w-100vw">
       <slot />
