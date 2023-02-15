@@ -1,5 +1,6 @@
 <script lang="ts">
   import BottomOverlay from "./BottomOverlay.svelte";
+  import ThemeSwitchButton from "./ThemeSwitchButton.svelte";
 
   let hidden = false;
 
@@ -15,6 +16,7 @@
   <button class:hidden class={buttonClasses} on:click={fullscreen}
     >Full-screen</button
   >
+  <ThemeSwitchButton {hidden} />
   <a class:hidden class={buttonClasses} href=".">Back to home</a>
   <button class:hidden class={buttonClasses} on:click={hide}
     >Hide buttons</button
