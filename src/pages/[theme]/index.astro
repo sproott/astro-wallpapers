@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import type { GetStaticPaths } from "astro";
 import MainPageButtons from "../../components/buttons/MainPageButtons.svelte";
 import ThemePickerOverlay from "../../components/buttons/ThemePickerOverlay.svelte";
@@ -10,10 +12,6 @@ export const getStaticPaths: GetStaticPaths = () => {
     params: { theme },
   }));
 };
-
-Astro.cookies.set("theme", Astro.params.theme ?? "nord", {
-  path: "/",
-});
 ---
 
 <Layout>

@@ -12,7 +12,11 @@ const { theme } = Astro.params;
     <meta name="generator" content={Astro.generator} />
     <title>Astro wallpapers</title>
   </head>
-  <body class=`font-mono color-fg-light ${theme}`>
+  <body class=`font-mono color-fg-light ${theme}` data-theme={theme}>
+    <script>
+      const { theme } = document.body.dataset;
+      await fetch(`/${theme ?? "nord"}`, { method: "POST" });
+    </script>
     <div class="relative bg-bg-darkGray h-100vh w-100vw">
       <slot />
     </div>
