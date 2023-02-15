@@ -4,6 +4,7 @@ export const prerender = true;
 import type { GetStaticPaths } from "astro";
 import MainPageButtons from "../../components/buttons/MainPageButtons.svelte";
 import ThemePickerOverlay from "../../components/buttons/ThemePickerOverlay.svelte";
+import InitStores from "../../components/InitStores.svelte";
 import Layout from "../../layouts/Layout.astro";
 import { themes } from "../../lib/constants";
 
@@ -12,6 +13,8 @@ export const getStaticPaths: GetStaticPaths = () => {
     params: { theme },
   }));
 };
+
+const { theme } = Astro.params;
 ---
 
 <Layout>
@@ -28,5 +31,6 @@ export const getStaticPaths: GetStaticPaths = () => {
     </div>
     <MainPageButtons client:load />
     <ThemePickerOverlay client:load />
+    <InitStores theme={theme} client:load />
   </div>
 </Layout>

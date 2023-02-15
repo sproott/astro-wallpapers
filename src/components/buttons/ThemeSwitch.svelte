@@ -9,14 +9,15 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-  on:click|stopPropagation={() =>
-    (window.location.href = `/${themeId}/${
+  on:click|stopPropagation={() => {
+    if (selected) return;
+    window.location.href = `/${themeId}/${
       $currentPage === "index" ? "" : $currentPage
-    }`)}
-  class:bg-accent-yellow={selected}
-  class:bg-bg-light={!selected}
-  class:border-accent-blue={!selected}
-  class="p-2 cursor-pointer rounded"
+    }`;
+  }}
+  class="p-2 cursor-pointer rounded {selected
+    ? 'bg-button-bg color-button-fg'
+    : ''} select-none"
 >
   {themeName}
 </div>
