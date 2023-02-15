@@ -1,0 +1,36 @@
+---
+export const prerender = true;
+
+import type { GetStaticPaths } from "astro";
+import MainPageButtons from "../../components/buttons/MainPageButtons.svelte";
+import ThemePickerOverlay from "../../components/buttons/ThemePickerOverlay.svelte";
+import Layout from "../../layouts/Layout.astro";
+import { themes } from "../../lib/constants";
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return themes.map((theme) => ({
+    params: { theme },
+  }));
+};
+
+Astro.cookies.set("theme", Astro.params.theme ?? "nord", {
+  path: "/",
+});
+---
+
+<Layout>
+  <div class="relative flex flex-col items-center h-full p-8">
+    <h1 class="text-3xl text-center">
+      Wallpapers made with <span class="i-twemoji:red-heart"></span> in Astro <span
+        class="i-twemoji:rocket"></span>
+    </h1>
+    <div class="flex flex-col grow items-center justify-center">
+      <a
+        class="text-xl text-center p-2 @hover:color-nord-frost-200 duration-100"
+        href="eat-sleep-code">Eat, sleep, code, repeat!</a
+      >
+    </div>
+    <MainPageButtons client:load />
+    <ThemePickerOverlay client:load />
+  </div>
+</Layout>

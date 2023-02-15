@@ -1,0 +1,34 @@
+---
+export const prerender = true;
+
+import type { GetStaticPaths } from "astro";
+import { themes } from "../../lib/constants";
+import { currentPage } from "../../lib/stores";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const wallpapers = await Astro.glob("../../components/wallpapers/*.astro");
+
+  return wallpapers.flatMap((wallpaper) =>
+    themes.map((theme) => ({
+      params: {
+        wallpaper: wallpaper.file
+          .split("/")
+          .at(-1)
+          ?.replace(/.astro$/, ""),
+        theme,
+      },
+      props: {
+        Wallpaper: wallpaper.default,
+      },
+    }))
+  );
+};
+
+const { Wallpaper } = Astro.props;
+
+Astro.cookies.set("theme", Astro.params.theme ?? "nord", {
+  path: "/",
+});
+---
+
+<Wallpaper />

@@ -1,3 +1,9 @@
+---
+// const theme = Astro.cookies.get("theme") ?? "nord";
+
+const { theme } = Astro.params;
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,8 +12,8 @@
     <meta name="generator" content={Astro.generator} />
     <title>Astro wallpapers</title>
   </head>
-  <body class="font-mono color-nord-snowStorm-300">
-    <div class="relative bg-nord-polarNight-100 h-100vh w-100vw">
+  <body class=`font-mono color-fg-light ${theme}`>
+    <div class="relative bg-bg-darkGray h-100vh w-100vw">
       <slot />
     </div>
   </body>

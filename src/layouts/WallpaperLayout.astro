@@ -1,9 +1,15 @@
 ---
-import FullScreenButtons from "../components/FullScreenButtons.svelte";
+import WallpaperButtons from "../components/buttons/WallpaperButtons.svelte";
+import ThemePickerOverlay from "../components/buttons/ThemePickerOverlay.svelte";
 import Layout from "./Layout.astro";
+import InitPageStore from "../components/InitPageStore.svelte";
+
+const { wallpaper } = Astro.params;
 ---
 
 <Layout>
   <slot />
-  <FullScreenButtons client:load />
+  <ThemePickerOverlay client:load />
+  <WallpaperButtons client:load />
+  <InitPageStore client:load wallpaper={wallpaper} />
 </Layout>

@@ -1,6 +1,6 @@
 ---
-import Item from "../components/eat-sleep-code/Item.astro";
-import WallpaperLayout from "../layouts/WallpaperLayout.astro";
+import Item from "../eat-sleep-code/Item.astro";
+import WallpaperLayout from "../../layouts/WallpaperLayout.astro";
 ---
 
 <WallpaperLayout>
@@ -8,16 +8,16 @@ import WallpaperLayout from "../layouts/WallpaperLayout.astro";
     <div
       class="flex justify-between items-center lt-md:flex-col lt-md:min-h-600px h-70vh md:h-full md:min-w-700px md:w-58vw"
     >
-      <Item item="eat" colorClass="color-nord-yellow">
+      <Item item="eat" colorClass="color-accent-yellow">
         <div class="i-fa6-solid:utensils"></div>
       </Item>
-      <Item item="sleep" colorClass="color-nord-green">
+      <Item item="sleep" colorClass="color-accent-green">
         <div class="i-fa6-solid:bed"></div>
       </Item>
-      <Item item="code" colorClass="color-nord-frost-400">
+      <Item item="code" colorClass="color-accent-blue">
         <div class="i-fa6-solid:code"></div>
       </Item>
-      <Item item="repeat" colorClass="color-nord-red">
+      <Item item="repeat" colorClass="color-accent-red">
         <div class="i-fa6-solid:arrow-rotate-right"></div>
       </Item>
     </div>

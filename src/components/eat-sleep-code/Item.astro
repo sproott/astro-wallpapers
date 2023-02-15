@@ -8,10 +8,10 @@ const { colorClass, item } = Astro.props;
 ---
 
 <div class="flex flex-col items-center lt-md:gap-2 gap-10">
-  <div class="text-7xl md:text-9xl color-nord-polarNight-200">
+  <div class="text-7xl md:text-9xl color-fg-dark">
     <slot />
   </div>
-  <div class="text-2xl md:text-4xl font-mono color-nord-snowStorm-100">
+  <div class="text-2xl md:text-4xl">
     {item}<span class={colorClass}>()</span>;
   </div>
 </div>
